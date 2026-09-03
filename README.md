@@ -15,6 +15,23 @@ https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ad
 
 > `OnCreat` 和 `AWAvenue-Custom-Ads-Rule` 是占位符，仓库创建后替换为真实值。
 
+## 复写配置（拦截融合在业务域名上的广告 API）
+
+部分 App（如网易云音乐）把广告 API 融合在核心业务域名（`interface3.music.163.com`）上，
+域名级拦截会误伤正常功能，需要**复写（Rewrite）**按 URL 路径精确拦截。
+
+**复写订阅地址**：
+```
+https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Rewrite.conf
+```
+
+**Quantumult X 添加复写**：
+1. 打开 Quantumult X → 右下角 **引用（资源）** → **+**
+2. 类型选 **复写（Rewrite）**，填入上面的复写订阅地址
+3. 保存后点 **下载/更新** 拉取
+
+已内置拦截：网易云音乐开屏广告的竞价/获取/配置/曝光上报 4 个 API 路径。
+
 ## Quantumult X 使用步骤
 
 1. 打开 Quantumult X → 右下角 **引用（资源）** → 点击 **+**
@@ -62,6 +79,7 @@ tracker.evil.cn:8080
 | 文件 | 说明 |
 |------|------|
 | `AWAvenue-Custom-Ads-Rule.list` | 主规则文件，Quantumult X 订阅此文件 |
+| `AWAvenue-Custom-Rewrite.conf` | 复写配置，拦截融合在业务域名上的广告 API（如网易云开屏） |
 | `update_rules.sh` | 更新脚本：追加域名 + 版本管理 + 推送 |
 | `temp/` | 临时文件（下载的原始规则、测试数据） |
 
