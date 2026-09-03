@@ -30,6 +30,10 @@ https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Re
 2. 类型选 **复写（Rewrite）**，填入上面的复写订阅地址
 3. 保存后点 **下载/更新** 拉取
 
+> ⚠️ 若之前添加过旧版复写并报 `Invalid Line [rewrite_local]`：先**删除该资源**，再重新
+> 添加上面的地址并更新（旧版已被解析缓存，需重建）。远程复写文件不含段头，
+> 仅规则行 + `#` 注释。
+
 已内置拦截：网易云音乐开屏广告的竞价/获取/配置/曝光上报 4 个 API 路径。
 
 ## Quantumult X 使用步骤
