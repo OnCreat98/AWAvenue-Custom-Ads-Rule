@@ -15,8 +15,8 @@
 #
 #反馈抓包: 将新发现的广告域名发给维护者，批量追加到本列表并更新版本。
 #--------------------------------------
-#Homepage: https://gitee.com/z17682156415/AWAvenue-Custom-Ads-Rule
-#订阅地址: https://gitee.com/z17682156415/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
+#Homepage: https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule
+#订阅地址: https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
 #--------------------------------------
 DOMAIN,1500020991.vodplayer.wxamedia.com,reject
 DOMAIN,1500022744.vodplayer.wxamedia.com,reject

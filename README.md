@@ -10,10 +10,10 @@
 ## 订阅地址
 
 ```
-https://gitee.com/z17682156415/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
+https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
 ```
 
-> `z17682156415` 和 `AWAvenue-Custom-Ads-Rule` 是占位符，仓库创建后替换为真实值。
+> `OnCreat` 和 `AWAvenue-Custom-Ads-Rule` 是占位符，仓库创建后替换为真实值。
 
 ## Quantumult X 使用步骤
 
@@ -23,7 +23,7 @@ https://gitee.com/z17682156415/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Cust
 4. 在引用页点 **下载/更新** 拉取最新规则
 5. 或手动写入配置文件的 `[filter_remote]` 段：
    ```
-   https://gitee.com/z17682156415/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list, tag=AWAvenue-Custom, enabled=true
+   https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list, tag=AWAvenue-Custom, enabled=true
    ```
 
 ## 更新流程（维护者用）
