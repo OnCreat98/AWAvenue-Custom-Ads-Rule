@@ -1,9 +1,9 @@
 #Title: AWAvenue-Custom Ads Rule (秋风定制增强版)
 #--------------------------------------
 #Base: AWAvenue Ads Rule v1.7.6-release (2026-08-20) — 902 rules
-#Version: 3
-#Update time: 2026-09-03 17:58:42 UTC+8
-#Total lines: 909
+#Version: 4
+#Update time: 2026-09-03 18:02:46 UTC+8
+#Total lines: 910
 #--------------------------------------
 #本规则基于「秋风广告规则 AWAvenue Ads Rule」Quantumult X 版，
 #在其基础上由作者通过抓包持续追加广告域名，形成个人定制去广告列表。
@@ -911,6 +911,7 @@ DOMAIN-SUFFIX,ad.gameley.com,reject
 DOMAIN-SUFFIX,adintl.cn,reject
 DOMAIN-SUFFIX,adx.adwangmai.com,reject
 DOMAIN-SUFFIX,data.hicloud.com,reject
+DOMAIN-SUFFIX,gridsumdissector.com,reject
 DOMAIN-SUFFIX,ubixioe.com,reject
 DOMAIN-SUFFIX,vlion.cn,reject
 DOMAIN-SUFFIX,yfanads.com,reject
