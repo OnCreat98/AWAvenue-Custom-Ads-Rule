@@ -10,13 +10,13 @@
 #适用于 Quantumult X (QX)，网络层拦截广告 SDK 通信。
 #
 #使用方式:
-#  Quantumult X -> 资源规则 -> 订阅 -> 添加本 list 的 Gitee Raw 地址
+#  Quantumult X -> 资源规则 -> 订阅 -> 添加本 list 的 GitHub Raw 地址
 #  或写入配置文件 [filter_remote]
 #
 #反馈抓包: 将新发现的广告域名发给维护者，批量追加到本列表并更新版本。
 #--------------------------------------
-#Homepage: https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule
-#订阅地址: https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
+#Homepage: https://github.com/OnCreat98/AWAvenue-Custom-Ads-Rule
+#订阅地址: https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAvenue-Custom-Ads-Rule.list
 #--------------------------------------
 DOMAIN,1500020991.vodplayer.wxamedia.com,reject
 DOMAIN,1500022744.vodplayer.wxamedia.com,reject

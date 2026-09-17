@@ -5,15 +5,15 @@
 
 - **格式**：Quantumult X 规则格式（`DOMAIN` / `DOMAIN-SUFFIX` / `DOMAIN-KEYWORD` + `reject`）
 - **原理**：网络层拦截广告 SDK 与服务器的通信，阻止广告加载（摇一摇广告、开屏广告、订阅号广告流等）
-- **更新方式**：Gitee 托管，Quantumult X 订阅后自动/手动更新
+- **更新方式**：GitHub 托管，Quantumult X 订阅后自动/手动更新
 
 ## 订阅地址
 
 ```
-https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list
+https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAvenue-Custom-Ads-Rule.list
 ```
 
-> `OnCreat` 和 `AWAvenue-Custom-Ads-Rule` 是占位符，仓库创建后替换为真实值。
+> 仓库：https://github.com/OnCreat98/AWAvenue-Custom-Ads-Rule
 
 ## 复写配置（拦截融合在业务域名上的广告 API）
 
@@ -22,7 +22,7 @@ https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ad
 
 **复写订阅地址**：
 ```
-https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Rewrite.conf
+https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAvenue-Custom-Rewrite.conf
 ```
 
 **Quantumult X 添加复写**：
@@ -44,7 +44,7 @@ https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Re
 4. 在引用页点 **下载/更新** 拉取最新规则
 5. 或手动写入配置文件的 `[filter_remote]` 段：
    ```
-   https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Ads-Rule.list, tag=AWAvenue-Custom, enabled=true
+   https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAvenue-Custom-Ads-Rule.list, tag=AWAvenue-Custom, enabled=true
    ```
 
 ## 更新流程（维护者用）
@@ -60,7 +60,7 @@ https://gitee.com/OnCreat/AWAvenue-Custom-Ads-Rule/raw/master/AWAvenue-Custom-Re
    ```bash
    echo "ad.example.com" | bash update_rules.sh -
    ```
-3. 脚本自动：提取主域名 → 去重（已有则跳过）→ 追加规则 → 更新版本号/时间/总条数 → 提交并推送至 Gitee
+3. 脚本自动：提取主域名 → 去重（已有则跳过）→ 追加规则 → 更新版本号/时间/总条数 → 提交并推送至 GitHub
 
 ### 抓包输入兼容格式
 

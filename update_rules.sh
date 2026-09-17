@@ -10,7 +10,7 @@
 #    1. 从输入中提取域名(兼容 URL/hosts 行/纯域名/带端口)
 #    2. 与现有规则去重
 #    3. 追加到规则文件, 更新头部 Version / Update time / Total lines
-#    4. git add + commit + push 到 Gitee
+#    4. git add + commit + push 到 GitHub
 # ============================================================
 set -euo pipefail
 
@@ -93,7 +93,7 @@ if git -C "$(dirname "$RULE_FILE")" rev-parse --is-inside-work-tree >/dev/null 2
   git -C "$(dirname "$RULE_FILE")" add AWAvenue-Custom-Ads-Rule.list
   git -C "$(dirname "$RULE_FILE")" commit -m "Update: add $ADDED ad domain(s), v$VER, total $TOTAL"
   git -C "$(dirname "$RULE_FILE")" push
-  echo "已提交并推送至 Gitee。"
+  echo "已提交并推送至 GitHub。"
 else
   echo "警告: 当前目录不是 git 仓库，跳过提交推送。请手动处理。"
 fi
