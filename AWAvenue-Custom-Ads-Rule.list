@@ -1,9 +1,9 @@
 #Title: AWAvenue-Custom Ads Rule (秋风定制增强版)
 #--------------------------------------
 #Base: AWAvenue Ads Rule v1.7.6-release (2026-08-20) — 902 rules
-#Version: 10
-#Update time: 2026-09-22 18:12:09 UTC+8
-#Total lines: 931
+#Version: 11
+#Update time: 2026-09-22 18:12:29 UTC+8
+#Total lines: 927
 #--------------------------------------
 #本规则基于「秋风广告规则 AWAvenue Ads Rule」Quantumult X 版，
 #在其基础上由作者通过抓包持续追加广告域名，形成个人定制去广告列表。
@@ -216,8 +216,8 @@ DOMAIN,ap.dongqiudi.com,reject
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,reject
 DOMAIN,apd-pcdnwxnat.teg.tencent-cloud.net,reject
 DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net,reject
-DOMAIN,api-access.pangolin-sdk-toutiao-b.com,reject
-DOMAIN,api-access.pangolin-sdk-toutiao.com,reject
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,reject
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,reject
 DOMAIN,api-access.pangolin-sdk-toutiao1.com,reject
 DOMAIN,api-access.pangolin-sdk-toutiao2.com,reject
 DOMAIN,api-access.pangolin-sdk-toutiao3.com,reject
@@ -399,7 +399,6 @@ DOMAIN,googleadservices-cn.com,reject
 DOMAIN,googleadservices.com,reject
 DOMAIN,googletagservices-cn.com,reject
 DOMAIN,gorgon.youdao.com,reject
-DOMAIN,gromore.pangolin-sdk-toutiao.com,reject
 DOMAIN,grs.dbankcloud.com,reject
 DOMAIN,grs.hicloud.com,reject
 DOMAIN,gslb.hpplay.cn,reject
@@ -494,8 +493,6 @@ DOMAIN,livewebbs2pcdn.msstatic.com,reject
 DOMAIN,lm10111.jtrincc.cn,reject
 DOMAIN,log-api-mn.huxiu.com,reject
 DOMAIN,log-api.huxiu.com,reject
-DOMAIN,log-api.pangolin-sdk-toutiao-b.com,reject
-DOMAIN,log-api.pangolin-sdk-toutiao.com,reject
 DOMAIN,log-report.com,reject
 DOMAIN,log-sdk.gifshow.com,reject
 DOMAIN,log-sdk.ksapisrv.com,reject
@@ -624,7 +621,6 @@ DOMAIN,p6-be-pack-sign.pglstatp-toutiao.com,reject
 DOMAIN,p66-ad.adkwai.com,reject
 DOMAIN,pagead2.googleadservices.com,reject
 DOMAIN,pagead2.googlesyndication.com,reject
-DOMAIN,pangolin-sdk-toutiao-b.com,reject
 DOMAIN,pay.sboot.cn,reject
 DOMAIN,pcdn.xmcdn.com,reject
 DOMAIN,pcdn.yximgs.com,reject
