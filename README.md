@@ -74,6 +74,20 @@ gurd.snssdk.com, *.pglstatp-toutiao.com, *.pstatp.com, *.pangolin-sdk-toutiao.co
 > 复写正则均以 `(\?|$)` 结尾锚定，只匹配目标路径本身（可带 query 参数），
 > 避免把 `/ad/getXXX` 这类同前缀的正常接口一起拦掉。
 
+### 为什么哔哩哔哩只能靠复写（实测结论）
+
+对 B站 APK 8.91.1 做静态分析（`unzip` 取 dex → `strings`）得到：
+
+- **App 内没有任何三方广告 SDK**：穿山甲 `com.bytedance.sdk.openadsdk`、优量汇 `com.qq.e.ads`、
+  快手 `com.kwad.sdk`、百度 `com.baidu.mobads` 命中均为 **0 次**；而自家 `com.bilibili.ad.*` 命中 **520 次**。
+- 广告与业务**同域名**：App 内置主机 `app.bilibili.com`(140 处)、`api.bilibili.com`(157 处)。
+- 广告字段：`card_type` / `ad_info` / `is_ad` / `ad_web_s` / `cm_v2` 均存在于 dex 中。
+
+→ 结论：**给 B站加广告域名白忙**（没有独立的广告域名可拦），只有两条路有效：
+① 复写按路径拦（本仓库已做，覆盖开屏/弹幕/活动入口/漫画）；
+② 首页信息流用响应体脚本按 `card_type=="cm_v2"` / `ad_info` 过滤（本仓库以注释形式给出，默认关闭）。
+唯一有效的域名级条目是商业化域 `cm.bilibili.com`（App 内引用 27 处），列表里已有。
+
 ## Quantumult X 使用步骤
 
 1. 打开 Quantumult X → 右下角 **引用（资源）** → 点击 **+**
