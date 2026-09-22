@@ -55,6 +55,21 @@ https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAven
 
 - 网易云音乐开屏广告的竞价/获取/配置/曝光上报 4 个 API 路径
 - 花生日记自营广告/运营活动接口（仅拦广告路径，不影响核心业务）
+- **哔哩哔哩**：开屏广告（`/x/v2/splash/*`）、弹幕广告（`/x/v2/dm/ad`）、首页右上角活动入口、漫画开屏（`manga` twirp）
+- **红果短剧 / 番茄小说（字节系）**：融合广告 API（`snssdk.com/api/ad/*`）、广告安装包分发（`gurd.snssdk.com`）、广告素材图片（`pglstatp-toutiao` / `pstatp` 的 `obj|img/ad*` 路径）
+
+### ⚠️ 复写生效还需：把主机加入 MitM 名单
+
+复写只在 MitM 解密范围内生效，请在 QX 主配置的 `[mitm]` 的 `hostname` 中**追加**（不要覆盖已有的）：
+
+```
+app.bilibili.com, api.bilibili.com, api.vc.bilibili.com, manga.bilibili.com,
+gurd.snssdk.com, *.pglstatp-toutiao.com, *.pstatp.com, *.pangolin-sdk-toutiao.com
+```
+
+- `app.bilibili.com` 走 **HTTP/2**，必须在 QX 中打开 **「MitM over HTTP/2」**，否则 B 站复写不生效且不报错。
+- **故意没有把 `i.snssdk.com` / `mcs.snssdk.com` 放进 MitM**：抖音/头条系对自有域名有证书固定（pinning），解密失败会让这些 App 的网络整段异常。对应的 `/api/ad/` 复写规则仍然保留（对未做 pinning 的场景生效），但不建议为它开 MitM。
+- 如需按域名拦截而非复写，规则列表已包含字节系广告域；列表与复写互不冲突。
 
 > 复写正则均以 `(\?|$)` 结尾锚定，只匹配目标路径本身（可带 query 参数），
 > 避免把 `/ad/getXXX` 这类同前缀的正常接口一起拦掉。
@@ -126,6 +141,15 @@ tracker.evil.cn:8080
 | `o2o.api.xiaomi.com` | 小米生活服务 | 可能影响小米生活服务相关功能 |
 | `metrics.icloud.com`、`securemetrics.apple.com` | Apple 诊断上报 | 一般无感，异常时排查 |
 | `a.market.xiaomi.com`（SUFFIX）、`t1/t2/t3.a.market.xiaomi.com` | 小米应用商店统计 | 一般无感 |
+
+### 2026-09-22 新增条目（红果短剧/番茄系逆向补充）
+
+| 域名 | 说明 | 风险 |
+|------|------|------|
+| `activity-ag.awemeughun.com` | 字节激励/活动聚合（红果「金币任务/看剧赚钱」同类链路） | **中**：金币任务打不开先移除这条 |
+| `sf3-ttcdn-tos.pstatp.com` | 广告素材 TOS 桶 | 低 |
+| `p3/p6/p9-ad-sign.byteimg.com` | 广告素材签名专用 | 低（**注意别与 `p*-novel.byteimg.com` 混淆，后者是封面图床，已明确不拦**） |
+| `msync-im1-vip6-std.easemob.com`、`api.iegadp.qq.com`、`adim.pinduoduo.com`、`shark-tracer.netease.com`、`mktm.jd.com`、`activity-zhendingtech.com` | 第三方广告 SDK 回调/上报 | 低：若某 App 登录/支付异常先查这几条 |
 
 ## 文件说明
 
