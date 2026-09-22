@@ -1,9 +1,9 @@
 #Title: AWAvenue-Custom Ads Rule (秋风定制增强版)
 #--------------------------------------
 #Base: AWAvenue Ads Rule v1.7.6-release (2026-08-20) — 902 rules
-#Version: 9
-#Update time: 2026-09-22 17:22:53 UTC+8
-#Total lines: 920
+#Version: 10
+#Update time: 2026-09-22 18:12:09 UTC+8
+#Total lines: 931
 #--------------------------------------
 #本规则基于「秋风广告规则 AWAvenue Ads Rule」Quantumult X 版，
 #在其基础上由作者通过抓包持续追加广告域名，形成个人定制去广告列表。
@@ -938,3 +938,14 @@ DOMAIN,v9-be-pack.pglstatp-toutiao.com,reject
 DOMAIN,h-adashx4bc.ut.taobao.com,reject
 DOMAIN,sdk-api.beizi.biz,reject
 DOMAIN,tobapplog.ctobsnssdk.com,reject
+DOMAIN,activity-ag.awemeughun.com,reject
+DOMAIN,activity-zhendingtech.com,reject
+DOMAIN,adim.pinduoduo.com,reject
+DOMAIN,api.iegadp.qq.com,reject
+DOMAIN,mktm.jd.com,reject
+DOMAIN,msync-im1-vip6-std.easemob.com,reject
+DOMAIN,p3-ad-sign.byteimg.com,reject
+DOMAIN,p6-ad-sign.byteimg.com,reject
+DOMAIN,p9-ad-sign.byteimg.com,reject
+DOMAIN,sf3-ttcdn-tos.pstatp.com,reject
+DOMAIN,shark-tracer.netease.com,reject
