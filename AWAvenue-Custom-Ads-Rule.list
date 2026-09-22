@@ -1,9 +1,9 @@
 #Title: AWAvenue-Custom Ads Rule (秋风定制增强版)
 #--------------------------------------
 #Base: AWAvenue Ads Rule v1.7.6-release (2026-08-20) — 902 rules
-#Version: 8
-#Update time: 2026-09-04 17:08:48 UTC+8
-#Total lines: 921
+#Version: 9
+#Update time: 2026-09-22 17:22:53 UTC+8
+#Total lines: 920
 #--------------------------------------
 #本规则基于「秋风广告规则 AWAvenue Ads Rule」Quantumult X 版，
 #在其基础上由作者通过抓包持续追加广告域名，形成个人定制去广告列表。
@@ -39,7 +39,6 @@ DOMAIN,ad.bwton.com,reject
 DOMAIN,ad.cctv.com,reject
 DOMAIN,ad.cyapi.cn,reject
 DOMAIN,ad.doubleclick.net,reject
-DOMAIN,ad.gameley.com,reject
 DOMAIN,ad.hpplay.cn,reject
 DOMAIN,ad.iot.360.cn,reject
 DOMAIN,ad.jia.360.cn,reject
