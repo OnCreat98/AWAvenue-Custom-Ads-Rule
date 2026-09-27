@@ -64,8 +64,7 @@ https://raw.githubusercontent.com/OnCreat98/AWAvenue-Custom-Ads-Rule/main/AWAven
 
 ```
 app.bilibili.com, api.bilibili.com, api.vc.bilibili.com, manga.bilibili.com,
-gurd.snssdk.com, *.pglstatp-toutiao.com, *.pstatp.com, *.pangolin-sdk-toutiao.com,
-d2ht17eu5c0ykz.cloudfront.net, d1sn57bew5rukg.cloudfront.net, madddh5.yqsbdx.com
+gurd.snssdk.com, *.pglstatp-toutiao.com, *.pstatp.com, *.pangolin-sdk-toutiao.com
 ```
 
 - `app.bilibili.com` 走 **HTTP/2**，必须在 QX 中打开 **「MitM over HTTP/2」**，否则 B 站复写不生效且不报错。
@@ -88,36 +87,6 @@ d2ht17eu5c0ykz.cloudfront.net, d1sn57bew5rukg.cloudfront.net, madddh5.yqsbdx.com
 ① 复写按路径拦（本仓库已做，覆盖开屏/弹幕/活动入口/漫画）；
 ② 首页信息流用响应体脚本按 `card_type=="cm_v2"` / `ad_info` 过滤（本仓库以注释形式给出，默认关闭）。
 唯一有效的域名级条目是商业化域 `cm.bilibili.com`（App 内引用 27 处），列表里已有。
-
-### 第三方响应脚本（会员 / 视频 / 广告，2026-09-27 新增）
-
-复写文件末尾引用了一组社区公开脚本 [chmg2025/js → mdsp.js](https://github.com/chmg2025/js)，
-通过 `script-response-body` 改写响应体，覆盖某视频类 App 的 4 个接口：
-
-| 接口 | 分组 |
-|---|---|
-| `/api/app/user/info` | 会员 |
-| `/api/app/media/play` | 视频 |
-| `/api/app/ping/config` | 广告（首页配置） |
-| `/api/app/media/v5/home` | 广告（首页列表） |
-
-**QX 语法对照**：上游给的原配置是 Surge/Loon 的 `[Script]` 段写法
-（`http-response <pattern> script-path=<js>, requires-body=true`），
-QX 中等价于 `<pattern> url script-response-body <js>`；
-QX 自动处理 body，不需要 `requires-body`，也不需要 `timeout`/`tag`。
-
-**需要追加到 MitM 名单的三个主机**（已并入上面清单）：
-
-```
-d2ht17eu5c0ykz.cloudfront.net, d1sn57bew5rukg.cloudfront.net, madddh5.yqsbdx.com
-```
-
-> 上游原配置写的是 `*.cloudfront.net`。在 QX 里通配 `*.cloudfront.net` 意味着
-> **所有** CloudFront 流量都要走 MitM 解密，范围过大（性能损耗，且可能干扰其他 App），
-> 本仓库只保留该 App 实际用到的两个子域。
-
-> ⚠️ 该脚本由第三方维护，发布时做了混淆加密，**无法静态审计其具体行为**。
-> 若该 App（或其它走 CloudFront 的 App）出现异常，优先注释掉本节规则排查。
 
 ## Quantumult X 使用步骤
 
